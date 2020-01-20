@@ -34,12 +34,12 @@ module.exports = {
     {
       resolve: "gatsby-source-graphql",
       options: {
-        // Arbitrary name for the remote schema Query type
-        typeName: "SWAPI",
-        // Field under which the remote schema will be accessible. You'll use this in your Gatsby query
-        fieldName: "swapi",
-        // Url to query from
-        url: "https://api.graphcms.com/simple/v1/swapi",
+        // This type will contain remote schema Query type
+        typeName: "POKEMON",
+        // This is the field under which it's accessible
+        fieldName: "pokeAPI",
+        // URL to query from
+        url: "https://graphql-pokemon.now.sh/",
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality

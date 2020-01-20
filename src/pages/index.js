@@ -1,6 +1,6 @@
 import React from "react"
-import { Link } from "gatsby"
 import { graphql } from "gatsby"
+import { Link } from "gatsby"
 
 import Layout from "../components/layout"
 import Image from "../components/image"
@@ -9,10 +9,10 @@ import SEO from "../components/seo"
 const IndexPage = ({ data }) => (
   <Layout>
     <SEO title="Home" />
-    <h1>Hi people</h1>
-    {data.swapi.allSpecies.map(species => (
-      <div key={species.id}>
-        <p>{species.name}</p>
+    {data.pokeAPI.pokemons.map(poke => (
+      <div key={poke.id}>
+        <p>{poke.name}</p>
+        <img src={poke.image} alt={poke.name} />
       </div>
     ))}
     <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
@@ -26,10 +26,11 @@ export default IndexPage
 
 export const query = graphql`
   query {
-    swapi {
-      allSpecies {
+    pokeAPI {
+      pokemons(first: 151) {
         id
         name
+        image
       }
     }
   }
