@@ -32,18 +32,19 @@ module.exports = {
       },
     },
     {
-      resolve: "gatsby-source-graphql",
+      resolve: `gatsby-source-graphql`,
       options: {
         // This type will contain remote schema Query type
-        typeName: "POKEMON",
+        typeName: `POKEMON`,
         // This is the field under which it's accessible
-        fieldName: "pokeAPI",
+        fieldName: `pokeAPI`,
         // URL to query from
-        url: "https://graphql-pokemon.now.sh/",
+        url: `https://graphql-pokemon.now.sh/`,
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
+    `gatsby-plugin-typescript`,
   ],
 }
