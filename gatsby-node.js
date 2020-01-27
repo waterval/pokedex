@@ -1,7 +1,22 @@
-/**
- * Implement Gatsby's Node APIs in this file.
- *
- * See: https://www.gatsbyjs.org/docs/node-apis/
- */
+const path = require(`path`);
 
-// You can delete this file if you're not using it
+exports.createPages = async ({ graphql, actions }) => {
+    const result = await graphql(`
+        query {
+            pokeAPI {
+                pokemons(first: 151) {
+                    name
+                }
+            }
+        }
+    `);
+    result.data.pokeAPI.pokemons.forEach(({ name }) => {
+        actions.createPage({
+            path: name,
+            component: path.resolve(`./src/templates/individual-pokemon.tsk`),
+            context: {
+                slug: name
+            }
+        });
+    });
+};
