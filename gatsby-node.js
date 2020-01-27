@@ -12,10 +12,10 @@ exports.createPages = async ({ graphql, actions }) => {
     `);
     result.data.pokeAPI.pokemons.forEach(({ name }) => {
         actions.createPage({
-            path: name,
-            component: path.resolve(`./src/templates/individual-pokemon.tsk`),
+            path: "pokemon/" + name.toLowerCase(),
+            component: path.resolve(`./src/templates/individual-pokemon.tsx`),
             context: {
-                slug: name
+                slug: "pokemon/" + name.toLowerCase()
             }
         });
     });
