@@ -18,24 +18,29 @@ const typeToColor = {
     Electric: "yellow"
 };
 
-const Pokemon = ({ queried }) => (
+const Pokemon = ({ queried, type }) => (
     <div className={styles.container}>
-        {queried.pokeAPI.pokemons.map(pokemon => (
+        {console.log("queried: ", queried)}
+        {console.log("type: ", type)}
+        {queried.map(pokemon => (
             <div
                 className={styles.item}
                 key={pokemon.id}
                 style={{ backgroundColor: typeToColor[pokemon.types[0]] }}
             >
-                <a href={"pokemon/" + pokemon.name.toLowerCase()}>
-                    <img
-                        className={styles.image}
-                        src={pokemon.image}
-                        alt={pokemon.name}
-                    />
-                    <p className={styles + pokemon.types[0]}>
-                        #{pokemon.number} {pokemon.name} {pokemon.types[0]}
-                    </p>
-                </a>
+                <div className={styles.image}>
+                    <a href={"pokemon/" + pokemon.name.toLowerCase()}>
+                        <img src={pokemon.image} alt={pokemon.name} />
+                    </a>
+                </div>
+                <div className={styles.text}>
+                    <a href={"pokemon/" + pokemon.name.toLowerCase()}>
+                        <p className={styles + pokemon.types[0]}>
+                            {pokemon.name} #{pokemon.number}
+                            {pokemon.types[0]} {pokemon.types[1]}
+                        </p>
+                    </a>
+                </div>
             </div>
         ))}
     </div>
