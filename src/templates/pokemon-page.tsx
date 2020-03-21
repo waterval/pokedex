@@ -6,7 +6,7 @@ import Info from "../components/pokemon-page/info";
 import Wrapper from "../components/pokemon-page/wrapper";
 import Image from "../components/pokemon-page/image";
 import Energy from "../components/pokemon-page/energy";
-import Body from "../components/pokemon-page/body";
+import Measurement from "../components/pokemon-page/measurement";
 import Catch from "../components/pokemon-page/catch";
 import SEO from "../components/seo";
 
@@ -40,14 +40,14 @@ const PokemonPage = ({ pageContext }) => {
                     <Header title="Origin" />
                     <Info category="Number" value={pokemon.number} />
                     <Info category="Family" value={pokemon.classification} />
-                    <Body
+                    <Measurement
                         category="Weight"
                         minimum={pokemon.weight.minimum}
                         maximum={pokemon.weight.maximum}
                         number={2}
                         unit={"kilogram"}
                     />
-                    <Body
+                    <Measurement
                         category="Height"
                         minimum={pokemon.height.minimum}
                         maximum={pokemon.height.maximum}
