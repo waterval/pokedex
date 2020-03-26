@@ -1,4 +1,5 @@
 import * as React from "react";
+import SEO from "../components/seo";
 import Layout from "../components/layout";
 import Header from "../components/pokemon-page/header";
 import Attacks from "../components/pokemon-page/attacks";
@@ -8,7 +9,9 @@ import Image from "../components/pokemon-page/image";
 import Energy from "../components/pokemon-page/energy";
 import Measurement from "../components/pokemon-page/measurement";
 import Catch from "../components/pokemon-page/catch";
-import SEO from "../components/seo";
+import Biography from "../components/pokemon-page/biography";
+import Breadcrumbs from "../components/pokemon-page/breadcrumbs";
+import * as styles from "./pokemon-page.module.css";
 
 const PokemonPage = ({ pageContext }) => {
     const { pokemon } = pageContext;
@@ -16,32 +19,28 @@ const PokemonPage = ({ pageContext }) => {
         <Layout>
             {console.log(pokemon)}
             <SEO title={pokemon.name} />
-            <Wrapper className={"container"}>
-                <Wrapper className={"name"}>
-                    <Wrapper className={"portrait"}>
+            <Breadcrumbs name={pokemon.name} />
+            <Wrapper className={styles.container}>
+                <Wrapper className={styles.portraitContainer}>
+                    <Wrapper className={styles.portraitItem}>
                         <Image src={pokemon.image} alt={pokemon.name} />
-                        <Header title={pokemon.name} />
                     </Wrapper>
-                    <Energy energy={pokemon.types} />
                 </Wrapper>
-                <Wrapper className="stats">
-                    <Header title="Stats" />
+                <Wrapper className={styles.name}>
+                    <Header title={pokemon.name} />
                     <Info category="Health" value={pokemon.maxHP} />
-                    <Info category="Resistance" />
-                    <Energy energy={pokemon.resistant} />
-                    <Info category="Weaknesses" />
-                    <Energy energy={pokemon.weaknesses} />
-                </Wrapper>
-                <Wrapper className="catch">
-                    <Header title="Catch" />
+                    <Wrapper className={styles.types}>
+                        <Info category="Type" />
+                        <Energy energy={pokemon.types} />
+                    </Wrapper>
                     <Catch rate={pokemon.fleeRate} />
                 </Wrapper>
-                <Wrapper className="origin">
+                <Wrapper className={styles.origin}>
                     <Header title="Origin" />
                     <Info category="Number" value={pokemon.number} />
                     <Info category="Family" value={pokemon.classification} />
                     <Measurement
-                        category="Weight"
+                        category={"Weight"}
                         minimum={pokemon.weight.minimum}
                         maximum={pokemon.weight.maximum}
                         number={2}
@@ -55,13 +54,39 @@ const PokemonPage = ({ pageContext }) => {
                         unit={"meter"}
                     />
                 </Wrapper>
-                <Wrapper className="attacks">
+                <Wrapper className={styles.biography}>
+                    <Header title="Biography" />
+                    <Biography
+                        name={pokemon.name}
+                        classification={pokemon.classification}
+                        health={pokemon.maxHP}
+                        fleerate={pokemon.fleeRate}
+                        minimumHeight={pokemon.height.minimum}
+                        maximumHeight={pokemon.height.maximum}
+                        minimumWeight={pokemon.weight.minimum}
+                        maximumWeight={pokemon.weight.maximum}
+                        typeOne={pokemon.types[0]}
+                        typeTwo={pokemon.types[1]}
+                    />
+                </Wrapper>
+                <Wrapper className={styles.attacks}>
                     <Header title="Attacks" />
                     <Attacks attacks={pokemon.attacks.fast} type={"fast"} />
                     <Attacks
                         attacks={pokemon.attacks.special}
                         type={"special"}
                     />
+                </Wrapper>
+                <Wrapper className={styles.effectiveness}>
+                    <Header title="Effectiveness" />
+                    <Wrapper className={styles.types}>
+                        <Info category="Resistance" />
+                        <Energy energy={pokemon.resistant} />
+                    </Wrapper>
+                    <Wrapper className={styles.types}>
+                        <Info category="Weaknesses" />
+                        <Energy energy={pokemon.weaknesses} />
+                    </Wrapper>
                 </Wrapper>
             </Wrapper>
         </Layout>
