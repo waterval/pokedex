@@ -4,7 +4,7 @@ import * as styles from "../../templates/pokemon-page.module.css";
 const Breadcrumbs = props => (
     <div className={styles.breadcrumbsContainer}>
         <div className={styles.breadcrumbsItem}>
-            <a href="/">Pokédex</a> > Pokemon > {props.name}
+            <a href="/pokedex/">Pokédex</a> > Pokemon > {props.name}
         </div>
     </div>
 );
