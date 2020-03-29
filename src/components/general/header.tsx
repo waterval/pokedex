@@ -18,7 +18,7 @@ const Header = ({ siteTitle }) => (
         >
             <h1 style={{ margin: 0 }}>
                 <Link
-                    to="/pokedex/"
+                    to="/"
                     style={{
                         color: `#f0f0f0`,
                         textDecoration: `none`
