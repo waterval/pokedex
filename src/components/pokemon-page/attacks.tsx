@@ -8,6 +8,9 @@ import * as styles from "../../templates/pokemon-page.module.css";
 const Attacks = props => (
     <Wrapper className={props.type}>
         {props.attacks.map(attack => {
+            if (attack.name === null) {
+                return null;
+            }
             return (
                 <Wrapper className={styles.attack} key={attack.name}>
                     <Paragraph text={attack.name} />
