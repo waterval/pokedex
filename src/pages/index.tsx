@@ -1,13 +1,13 @@
 import * as React from "react";
 import { graphql } from "gatsby";
-import Layout from "../components/layout";
-import SEO from "../components/seo";
-import Pokemon from "../components/pokemon";
+import Layout from "../components/general/layout";
+import SEO from "../components/general/seo";
+import Pokedex from "../components/pokedex/pokedex";
 
 const IndexPage = ({ data }) => (
     <Layout>
         <SEO title="Home" />
-        <Pokemon queried={data} />
+        <Pokedex queried={data.pokeAPI.pokemons} />
     </Layout>
 );
 
