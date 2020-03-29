@@ -3,16 +3,23 @@ import Type from "../pokemon-page/type";
 import Progress from "../pokemon-page/progress";
 import Wrapper from "../pokemon-page/wrapper";
 import Paragraph from "../pokemon-page/paragraph";
+import * as styles from "../../templates/pokemon-page.module.css";
 
 const Attacks = props => (
     <Wrapper className={props.type}>
         {props.attacks.map(attack => {
             return (
-                <Wrapper className="attack" key={attack.name}>
+                <Wrapper className={styles.attack} key={attack.name}>
                     <Paragraph text={attack.name} />
+                    <Wrapper>
+                        <Type type={attack.type} />
+                    </Wrapper>
                     <Paragraph text={attack.damage} />
-                    <Type type={attack.type} />
-                    <Progress value={attack.damage} max={"120"} />
+                    <Progress
+                        value={attack.damage}
+                        max={"120"}
+                        type={attack.type}
+                    />
                 </Wrapper>
             );
         })}
