@@ -43,7 +43,11 @@ const Layout = ({ children }) => {
                     }}
                 >
                     © {new Date().getFullYear()} -{" "}
-                    <a href="https://github.com/waterval" target="_blank">
+                    <a
+                        href="https://github.com/waterval"
+                        target="_blank"
+                        style={{ color: "#f0f0f0" }}
+                    >
                         Waterval
                     </a>
                     .
