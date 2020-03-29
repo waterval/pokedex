@@ -1,15 +1,22 @@
 import * as React from "react";
 import Info from "../pokemon-page/info";
-import Progress from "../pokemon-page/progress";
 import Wrapper from "../pokemon-page/wrapper";
+import * as styles from "../../templates/pokemon-page.module.css";
 
 const Catch = props => {
-    const rate = (1 - props.rate) * 100;
-    const chance = rate + "%";
+    let chance;
+    if (props.rate >= 0.15) {
+        chance = "Common";
+    } else if (props.rate >= 0.125) {
+        chance = "Uncommon";
+    } else if (props.rate >= 0.075) {
+        chance = "Rare";
+    } else {
+        chance = "Very rare";
+    }
     return (
-        <Wrapper className={"catch"}>
-            <Info category="Catch rate" value={chance} />
-            <Progress value={rate} max={"100"} />
+        <Wrapper>
+            <Info category="Rarity" value={chance} />
         </Wrapper>
     );
 };
