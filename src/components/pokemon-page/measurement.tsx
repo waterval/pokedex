@@ -1,6 +1,6 @@
 import * as React from "react";
 
-const Body = props => {
+const Measurement = props => {
     const minimum = props.minimum.substring(
         0,
         props.minimum.length - props.number
@@ -10,11 +10,12 @@ const Body = props => {
         props.maximum.length - props.number
     );
     const amount = (Number(minimum) + Number(maximum)) / 2;
+    const roundedAmount = amount.toFixed(2);
     return (
         <p>
-            <strong>{props.category}:</strong> {amount} {props.unit}
+            <strong>{props.category}:</strong> {roundedAmount} {props.unit}
         </p>
     );
 };
 
-export default Body;
+export default Measurement;
