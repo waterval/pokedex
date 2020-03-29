@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[3],{"5xHT":function(e,t,n){"use strict";n.r(t);var a=n("5h0R"),u=n("EJvs"),l=n("dNk1");t.default=function(){return a.createElement(u.a,null,a.createElement(l.a,{title:"404: Not found"}),a.createElement("h1",null,"NOT FOUND"),a.createElement("p",null,"You just hit a route that doesn't exist... the sadness."))}}}]);
+//# sourceMappingURL=component---users-luuk-desktop-published-projects-dutch-tv-shows-src-pages-404-tsx-595ae31607ab3a402324.js.map

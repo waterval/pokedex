@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[4],{o6oc:function(e,n,t){"use strict";t.r(n);var c=t("5h0R"),o=t("EJvs");n.default=function(){return c.createElement(o.a,null,c.createElement("h1",null,"Hi"))}}}]);
+//# sourceMappingURL=component---users-luuk-desktop-published-projects-dutch-tv-shows-src-pages-about-tsx-de166c04db2f0c5cd62b.js.map

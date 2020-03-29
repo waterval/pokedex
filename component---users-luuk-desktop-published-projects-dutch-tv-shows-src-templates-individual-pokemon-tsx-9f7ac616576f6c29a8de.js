@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[7],{eHQb:function(e,n,t){"use strict";t.r(n);var o=t("5h0R"),l=t("EJvs");n.default=function(){return o.createElement(l.a,null,o.createElement("div",null,"Hello, welcome to the pokemon page."))}}}]);
+//# sourceMappingURL=component---users-luuk-desktop-published-projects-dutch-tv-shows-src-templates-individual-pokemon-tsx-9f7ac616576f6c29a8de.js.map
