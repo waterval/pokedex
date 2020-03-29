@@ -1,7 +1,7 @@
 import * as React from "react";
-import SEO from "../components/seo";
-import Layout from "../components/layout";
-import Header from "../components/pokemon-page/header";
+import SEO from "../components/general/seo";
+import Layout from "../components/general/layout";
+import HeaderTwo from "../components/pokemon-page/headertwo";
 import Attacks from "../components/pokemon-page/attacks";
 import Info from "../components/pokemon-page/info";
 import Wrapper from "../components/pokemon-page/wrapper";
@@ -26,8 +26,8 @@ const PokemonPage = ({ pageContext }) => {
                         <Image src={pokemon.image} alt={pokemon.name} />
                     </Wrapper>
                 </Wrapper>
-                <Wrapper className={styles.name}>
-                    <Header title={pokemon.name} />
+                <Wrapper>
+                    <HeaderTwo title={pokemon.name} />
                     <Info category="Health" value={pokemon.maxHP} />
                     <Wrapper className={styles.types}>
                         <Info category="Type" />
@@ -35,8 +35,8 @@ const PokemonPage = ({ pageContext }) => {
                     </Wrapper>
                     <Catch rate={pokemon.fleeRate} />
                 </Wrapper>
-                <Wrapper className={styles.origin}>
-                    <Header title="Origin" />
+                <Wrapper>
+                    <HeaderTwo title="Origin" />
                     <Info category="Number" value={pokemon.number} />
                     <Info category="Family" value={pokemon.classification} />
                     <Measurement
@@ -54,8 +54,8 @@ const PokemonPage = ({ pageContext }) => {
                         unit={"meter"}
                     />
                 </Wrapper>
-                <Wrapper className={styles.biography}>
-                    <Header title="Biography" />
+                <Wrapper>
+                    <HeaderTwo title="Biography" />
                     <Biography
                         name={pokemon.name}
                         classification={pokemon.classification}
@@ -69,16 +69,16 @@ const PokemonPage = ({ pageContext }) => {
                         typeTwo={pokemon.types[1]}
                     />
                 </Wrapper>
-                <Wrapper className={styles.attacks}>
-                    <Header title="Attacks" />
+                <Wrapper>
+                    <HeaderTwo title="Attacks" />
                     <Attacks attacks={pokemon.attacks.fast} type={"fast"} />
                     <Attacks
                         attacks={pokemon.attacks.special}
                         type={"special"}
                     />
                 </Wrapper>
-                <Wrapper className={styles.effectiveness}>
-                    <Header title="Effectiveness" />
+                <Wrapper>
+                    <HeaderTwo title="Effectiveness" />
                     <Wrapper className={styles.types}>
                         <Info category="Resistance" />
                         <Energy energy={pokemon.resistant} />
