@@ -1,7 +1,6 @@
 import * as React from "react";
 import Info from "../pokemon-page/info";
 import Wrapper from "../pokemon-page/wrapper";
-import * as styles from "../../templates/pokemon-page.module.css";
 
 const Catch = props => {
     let chance;
