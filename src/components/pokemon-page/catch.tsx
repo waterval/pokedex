@@ -2,8 +2,8 @@ import * as React from "react";
 import Info from "../pokemon-page/info";
 import Wrapper from "../pokemon-page/wrapper";
 
-const Catch = props => {
-    let chance;
+const Catch = (props: { rate: number }) => {
+    let chance: string;
     if (props.rate >= 0.15) {
         chance = "Common";
     } else if (props.rate >= 0.125) {

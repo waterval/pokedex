@@ -3,9 +3,9 @@ import Type from "../pokemon-page/type";
 import Wrapper from "../pokemon-page/wrapper";
 import * as styles from "../../templates/pokemon-page.module.css";
 
-const Energy = props => (
+const Energy = (props: any) => (
     <Wrapper className={styles.energy}>
-        {props.energy.map((type, index) => {
+        {props.energy.map((type: string, index: number) => {
             return <Type type={type} key={index} />;
         })}
     </Wrapper>

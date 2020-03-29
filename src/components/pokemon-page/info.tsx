@@ -1,6 +1,6 @@
 import * as React from "react";
 
-const Info = props => (
+const Info = (props: any) => (
     <p>
         <strong>{props.category}:</strong> {props.value}
     </p>

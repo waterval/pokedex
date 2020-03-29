@@ -2,7 +2,7 @@ import * as React from "react";
 import { typeToColor } from "../general/typeToColor";
 import * as styles from "../../templates/pokemon-page.module.css";
 
-const Progress = props => {
+const Progress = (props: any) => {
     let proportionedWidth = (props.value / props.max) * 100 + "%";
     return (
         <div className={styles.progressContainer}>

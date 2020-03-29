@@ -3,7 +3,7 @@ import Wrapper from "../pokemon-page/wrapper";
 import * as styles from "../../templates/pokemon-page.module.css";
 import { typeToColor } from "../general/typeToColor";
 
-const Type = props => (
+const Type = (props: any) => (
     <Wrapper
         className={styles.type}
         key={props.index}

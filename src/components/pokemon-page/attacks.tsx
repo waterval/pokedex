@@ -5,9 +5,15 @@ import Wrapper from "../pokemon-page/wrapper";
 import Paragraph from "../pokemon-page/paragraph";
 import * as styles from "../../templates/pokemon-page.module.css";
 
-const Attacks = props => (
+interface Attack {
+    name: string;
+    type: string;
+    damage: number;
+}
+
+const Attacks = (props: any) => (
     <Wrapper className={props.type}>
-        {props.attacks.map(attack => {
+        {props.attacks.map((attack: Attack) => {
             if (attack.name === null) {
                 return null;
             }

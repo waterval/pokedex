@@ -1,5 +1,5 @@
 import * as React from "react";
 
-const Paragraph = props => <p>{props.text}</p>;
+const Paragraph = (props: { text: string }) => <p>{props.text}</p>;
 
 export default Paragraph;
